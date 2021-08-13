@@ -19,7 +19,7 @@ const prerenderedLoadable = dynamicImport => {
 }
 
 const Home = prerenderedLoadable(() => import('./pages/Home'))
-const About = prerenderedLoadable(() => import('./pages/Home'))
+const About = prerenderedLoadable(() => import('./pages/About'))
 
 function App() {
   return (
