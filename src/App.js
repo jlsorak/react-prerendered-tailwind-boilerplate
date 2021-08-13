@@ -4,10 +4,22 @@ import {
   Switch,
   Route,
   Link
-} from "react-router-dom";
+} from "react-router-dom"
+import loadable from "@loadable/component"
+import { PrerenderedComponent } from "react-prerendered-component"
 
-import Home from './pages/Home'
-import About from './pages/About'
+const prerenderedLoadable = dynamicImport => {
+  const LoadableComponent = loadable(dynamicImport)
+  return React.memo(props => (
+    // you can use the `.preload()` method from react-loadable or react-imported-component`
+    <PrerenderedComponent live={LoadableComponent.load()}>
+      <LoadableComponent {...props} />
+    </PrerenderedComponent>
+  ))
+}
+
+const Home = prerenderedLoadable(() => import('./pages/Home'))
+const About = prerenderedLoadable(() => import('./pages/Home'))
 
 function App() {
   return (
@@ -37,4 +49,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
