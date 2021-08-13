@@ -3,8 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
-       - '# This installs Chrome on any RHEL/CentOS/Amazon Linux variant.'
-       - '# See: https://github.com/puppeteer/puppeteer/issues/765#issuecomment-445334163 for more details'
+        - '# This installs Chrome on any RHEL/CentOS/Amazon Linux variant.'
+        - '# See: https://github.com/puppeteer/puppeteer/issues/765#issuecomment-445334163 for more details'
         - curl https://intoli.com/install-google-chrome.sh | bash
         - yarn install
     build:
