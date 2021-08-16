@@ -8,12 +8,14 @@ import {
 
 import Home from './pages/Home'
 import About from './pages/About'
+import Header from './components/Header'
 
 function App() {
   return (
     <Router>
       <div>
-        <nav>
+        <Header />
+        {/* <nav>
           <ul>
             <li>
               <Link to="/">Home</Link>
@@ -22,7 +24,7 @@ function App() {
               <Link to="/about">About</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
 
         <Switch>
           <Route path="/about">
